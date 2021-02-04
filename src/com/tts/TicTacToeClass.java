@@ -1,14 +1,12 @@
 package com.tts;
 
-public class TicTacToeClass
-{
+public class TicTacToeClass {
     // Instance Variables
     private char[][] board;
     private int turns;
 
     // Constructors
-    public TicTacToeClass()
-    {
+    public TicTacToeClass() {
         board = new char[3][3];
         turns = 0;
 
@@ -18,32 +16,27 @@ public class TicTacToeClass
     }
 
     // Accessor Methods
-
-    public boolean isWinner( char p )
-    {
+    public boolean isWinner( char p ) {
         return false;
     }
 
-    public boolean isFull()
-    {
+    public boolean isFull() {
         return false;
     }
 
-    public boolean isCat()
-    {
+    public boolean isCat() {
         return false;
     }
 
-    public boolean isValid( int r, int c )
-    {
+    public boolean isValid( int r, int c ) {
         if ( 0 <= r && r <= 2 && 0 <= c && c <= 2 )
             return true;
         else
             return false;
     }
 
-    public int numTurns()
-    {
+    public int numTurns() {
+        turns++;
         return turns;
     }
 
@@ -66,9 +59,8 @@ public class TicTacToeClass
     }
 
     // Modifiers
-    public void playMove( char p, int r, int c )
-    {
-    }
+    public void playMove( char p, int r, int c ) {
 
+    }
 }
 
