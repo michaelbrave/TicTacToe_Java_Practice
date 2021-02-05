@@ -17,15 +17,49 @@ public class TicTacToeClass {
 
     // Accessor Methods
     public boolean isWinner( char p ) {
-        return false;
+        // col wins
+        if (board[0][0] == p && board[1][0] == p && board[2][0] == p) {
+            return true;
+        } else if (board[0][1] == p && board[1][1] == p && board[2][1] == p) {
+            return true;
+        } else if (board[0][2] == p && board[1][2] == p && board[2][2] == p) {
+            return true;
+        }
+        // row wins
+        else if (board[0][0] == p && board[0][1] == p && board[0][2] == p) {
+            return true;
+        } else if (board[1][0] == p && board[1][1] == p && board[1][2] == p) {
+            return true;
+        } else if (board[2][0] == p && board[2][1] == p && board[2][2] == p) {
+            return true;
+        }
+        // diagonal wins
+        else if (board[0][0] == p && board[1][1] == p && board[2][2] == p) {
+            return true;
+        } else if (board[0][2] == p && board[1][1] == p && board[2][0] == p) {
+            return true;
+        }
+        // default return
+        else {
+            return false;
+        }
+
     }
 
     public boolean isFull() {
-        return false;
+        if (numTurns() == 9) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean isCat() {
-        return false;
+        if (isFull() && !isWinner('X') && !isWinner('O')) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean isValid( int r, int c ) {
@@ -36,7 +70,6 @@ public class TicTacToeClass {
     }
 
     public int numTurns() {
-        turns++;
         return turns;
     }
 
@@ -60,7 +93,8 @@ public class TicTacToeClass {
 
     // Modifiers
     public void playMove( char p, int r, int c ) {
-
+        board[r][c] = p;
+        turns++;
     }
 }
 
